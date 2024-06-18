@@ -11,7 +11,12 @@ const SearchResult: React.FC<Props> = ({ result }) => {
 
   return (
     <>
-      <div className="food-item" onClick={() => setFood(result)}>
+      <div
+        className="food-item"
+        onClick={() => {
+          if (result) setFood(result);
+        }}
+      >
         {result && <p className="food-item-name">{result[5].toString()}</p>}
       </div>
 
@@ -30,7 +35,7 @@ const SearchResult: React.FC<Props> = ({ result }) => {
           display: flex;
           align-items: center;
           justify-content: center;
-          cursor: pointer;
+          cursor: ${result ? "pointer" : "initial"};
         }
 
         .food-item-name {
