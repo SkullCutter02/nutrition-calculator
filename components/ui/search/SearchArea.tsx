@@ -1,5 +1,4 @@
 import React from "react";
-import PrimaryTextInput from "../../widgets/TextInputControl";
 
 const SearchArea: React.FC = () => {
   return (
@@ -8,16 +7,7 @@ const SearchArea: React.FC = () => {
         <h1>
           搜尋食物 <br /> 的營養資料
         </h1>
-        <PrimaryTextInput
-          placeholder={"e.g   叉燒包 / 揚州炒飯"}
-          name={"search"}
-          borderRadius="10px"
-          borderColor="var(--primaryColor)"
-          backgroundColor="white"
-          padding="17px 10px"
-          fontWeight="bold"
-          width="60%"
-        />
+        <input type="text" placeholder="e.g   叉燒包 / 揚州炒飯" />
       </div>
 
       <style jsx>{`
@@ -34,6 +24,17 @@ const SearchArea: React.FC = () => {
           color: #525252;
           text-align: center;
           margin-bottom: 20px;
+        }
+
+        input {
+          background: white;
+          padding: 17px 10px;
+          font-weight: bold;
+          width: 60%;
+          box-shadow: 0 0 0 1px var(--primaryColor);
+          border-radius: 10px;
+          border: none;
+          outline: none;
         }
       `}</style>
     </>
