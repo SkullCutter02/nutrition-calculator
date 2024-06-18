@@ -1,21 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SearchResult from "./SearchResult";
+import { Row } from "read-excel-file";
 
-const ResultsArea: React.FC = () => {
+interface Props {
+  results: Row[];
+}
+
+const ResultsArea: React.FC<Props> = ({ results }) => {
+  const [page, setPage] = useState<number>(0);
+
+  // whenever the user inputs something, set the page count back to 0
+  useEffect(() => {
+    setPage(0);
+  }, [results]);
+
   return (
     <>
       <div className="results-area">
-        <div className="arrow-left" />
-        <SearchResult />
-        <SearchResult />
-        <SearchResult />
-        <SearchResult />
-        <SearchResult />
-        <SearchResult />
-        <SearchResult />
-        <SearchResult />
-        <SearchResult />
-        <div className="arrow-right" />
+        {page > 0 && <div className="arrow-left" onClick={() => setPage((prev) => prev - 1)} />}
+        <SearchResult result={results[9 * page]} />
+        <SearchResult result={results[9 * page + 1]} />
+        <SearchResult result={results[9 * page + 2]} />
+        <SearchResult result={results[9 * page + 3]} />
+        <SearchResult result={results[9 * page + 4]} />
+        <SearchResult result={results[9 * page + 5]} />
+        <SearchResult result={results[9 * page + 6]} />
+        <SearchResult result={results[9 * page + 7]} />
+        <SearchResult result={results[9 * page + 8]} />
+        {(page + 1) * 9 < results.length && (
+          <div className="arrow-right" onClick={() => setPage((prev) => prev + 1)} />
+        )}
       </div>
 
       <style jsx>{`

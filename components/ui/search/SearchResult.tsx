@@ -1,17 +1,20 @@
 import React from "react";
+import { Row } from "read-excel-file";
 
-const SearchResult: React.FC = () => {
+interface Props {
+  result: Row;
+}
+
+const SearchResult: React.FC<Props> = ({ result }) => {
   return (
     <>
-      <div className="food-item">
-        <p className="food-item-name">三文魚</p>
-      </div>
+      <div className="food-item">{result && <p className="food-item-name">{result[5].toString()}</p>}</div>
 
       <style jsx>{`
         .food-item {
           width: 100%;
           height: 100%;
-          background: red;
+          background: ${result ? "red" : "#8f8f8f"};
           aspect-ratio: 1;
           border-radius: 40px;
           border: 4px solid white;
