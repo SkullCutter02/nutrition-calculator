@@ -1,14 +1,19 @@
 import React from "react";
 import { Row } from "read-excel-file";
+import { useFoodContext } from "../../../context/FoodContext";
 
 interface Props {
   result: Row;
 }
 
 const SearchResult: React.FC<Props> = ({ result }) => {
+  const { setFood } = useFoodContext();
+
   return (
     <>
-      <div className="food-item">{result && <p className="food-item-name">{result[5].toString()}</p>}</div>
+      <div className="food-item" onClick={() => setFood(result)}>
+        {result && <p className="food-item-name">{result[5].toString()}</p>}
+      </div>
 
       <style jsx>{`
         .food-item {
@@ -21,6 +26,7 @@ const SearchResult: React.FC<Props> = ({ result }) => {
           display: flex;
           align-items: center;
           justify-content: center;
+          cursor: pointer;
         }
 
         .food-item-name {
