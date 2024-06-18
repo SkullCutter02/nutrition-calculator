@@ -8,8 +8,8 @@ const Chart: React.FC = () => {
         <h1>三文魚壽司</h1>
         <PieChart
           data={[
-            { title: "蛋白質", value: 38.9, color: "#39AA4A" },
-            { title: "碳水化合物", value: 49.4, color: "#FFCC2E" },
+            { title: "蛋白質", value: 38.9, color: "var(--primaryColor)" },
+            { title: "碳水化合物", value: 49.4, color: "var(--secondaryColor)" },
             { title: "脂肪", value: 11.7, color: "#0000FF" },
           ]}
           lineWidth={35}
@@ -17,7 +17,8 @@ const Chart: React.FC = () => {
           center={[200, 70]}
           labelStyle={(dataIndex) => ({
             fontSize: "0.4rem",
-            fill: dataIndex === 0 ? "#39AA4A" : dataIndex === 1 ? "#FFCC2E" : "#0000FF",
+            fill:
+              dataIndex === 0 ? "var(--primaryColor)" : dataIndex === 1 ? "var(--secondaryColor)" : "#0000FF",
             whiteSpace: "pre-line",
             fontWeight: "500",
           })}
