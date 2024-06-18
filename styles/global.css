@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'open-sans', sans-serif;
+}
+
+:root {
+  --primaryColor: #39AA4A;
+  --secondaryColor: #FFCC2E;
+  --errorColor: red;
+}
