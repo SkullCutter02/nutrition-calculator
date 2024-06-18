@@ -19,7 +19,11 @@ const SearchResult: React.FC<Props> = ({ result }) => {
         .food-item {
           width: 100%;
           height: 100%;
-          background: ${result ? (food[5].toString() === result[5].toString() ? "blue" : "red") : "#8f8f8f"};
+          background: ${result
+            ? food && food[5].toString() === result[5].toString()
+              ? "blue"
+              : "red"
+            : "#8f8f8f"};
           aspect-ratio: 1;
           border-radius: 40px;
           border: 4px solid white;

@@ -53,7 +53,7 @@ const SearchArea: React.FC<Props> = ({ setResults }) => {
         }
 
         h1 {
-          color: #525252;
+          color: var(--secondaryTextColor);
           text-align: center;
           margin-bottom: 20px;
         }

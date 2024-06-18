@@ -8,5 +8,6 @@
 :root {
   --primaryColor: #39AA4A;
   --secondaryColor: #FFCC2E;
+  --secondaryTextColor: #525252;
   --errorColor: red;
 }
