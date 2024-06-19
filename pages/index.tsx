@@ -16,9 +16,13 @@ const HomePage: React.FC = () => {
       <Header />
       <FoodContext.Provider value={{ food, setFood }}>
         <Search />
-        <Chart />
-        <Information />
-        <TipsSection />
+        {food && (
+          <>
+            <Chart />
+            <Information />
+            <TipsSection />
+          </>
+        )}
       </FoodContext.Provider>
     </>
   );

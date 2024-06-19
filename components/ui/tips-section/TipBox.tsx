@@ -1,17 +1,12 @@
 import React from "react";
-import { useFoodContext } from "../../../context/FoodContext";
 
 const TipBox: React.FC = () => {
-  const { food } = useFoodContext();
-
   return (
     <>
-      {food && (
-        <div className="tip-box">
-          <h1>飲食貼士</h1>
-          <p>牛肉含豐富鐵質及蛋白質, 建議選擇鮮牛肉, 脂肪含量較低。例如:雪菜肉絲湯米粉。</p>
-        </div>
-      )}
+      <div className="tip-box">
+        <h1>飲食貼士</h1>
+        <p>牛肉含豐富鐵質及蛋白質, 建議選擇鮮牛肉, 脂肪含量較低。例如:雪菜肉絲湯米粉。</p>
+      </div>
 
       <style jsx>{`
         .tip-box {
