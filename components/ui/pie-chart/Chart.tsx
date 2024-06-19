@@ -1,5 +1,6 @@
 import React from "react";
 import { PieChart } from "react-minimal-pie-chart";
+
 import { useFoodContext } from "../../../context/FoodContext";
 
 const Chart: React.FC = () => {
@@ -7,7 +8,7 @@ const Chart: React.FC = () => {
 
   return (
     <>
-      <section>
+      <section id="chart">
         <h1>{food[5].toString()}</h1>
         <PieChart
           data={[
