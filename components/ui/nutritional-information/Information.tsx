@@ -1,70 +1,75 @@
 import React from "react";
+import { useFoodContext } from "../../../context/FoodContext";
 
 const Information: React.FC = () => {
+  const { food } = useFoodContext();
+
   return (
     <>
-      <section>
-        <div className="table-container">
-          <div className="table-header">
-            <p>營養資料 Nutrition Information</p>
+      {food && (
+        <section>
+          <div className="table-container">
+            <div className="table-header">
+              <p>營養資料 Nutrition Information</p>
+            </div>
+            <div className="table-body-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>每100克 / Per100g</th>
+                    <th>
+                      每食用份量 / Per Serving <br /> (一碟 = 500g)
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="topic">能量 / Energy</td>
+                    <td>{parseFloat(food[9].toString()).toFixed(1)}千卡/kcal</td>
+                    <td>{parseFloat(food[21].toString()).toFixed(1)}千卡/kcal</td>
+                  </tr>
+                  <tr>
+                    <td className="topic">蛋白質 / Protein</td>
+                    <td>{parseFloat(food[10].toString()).toFixed(1)}克/g</td>
+                    <td>{parseFloat(food[22].toString()).toFixed(1)}克/g</td>
+                  </tr>
+                  <tr>
+                    <td className="topic">總脂肪 / Total fat</td>
+                    <td>{parseFloat(food[11].toString()).toFixed(1)}克/g</td>
+                    <td>{parseFloat(food[23].toString()).toFixed(1)}克/g</td>
+                  </tr>
+                  <tr>
+                    <td className="topic">- 飽和脂肪 / Saturated fat</td>
+                    <td>{parseFloat(food[12].toString()).toFixed(1)}克/g</td>
+                    <td>{parseFloat(food[24].toString()).toFixed(1)}克/g</td>
+                  </tr>
+                  <tr>
+                    <td className="topic">- 反式脂肪 / Trans fat</td>
+                    <td>{parseFloat(food[13].toString()).toFixed(1)}克/g</td>
+                    <td>{parseFloat(food[25].toString()).toFixed(1)}克/g</td>
+                  </tr>
+                  <tr>
+                    <td className="topic">碳水化合物 / Carbohydrates</td>
+                    <td>{parseFloat(food[14].toString()).toFixed(1)}克/g</td>
+                    <td>{parseFloat(food[26].toString()).toFixed(1)}克/g</td>
+                  </tr>
+                  <tr>
+                    <td className="topic">糖 / Sugars</td>
+                    <td>{parseFloat(food[15].toString()).toFixed(1)}克/g</td>
+                    <td>{parseFloat(food[27].toString()).toFixed(1)}克/g</td>
+                  </tr>
+                  <tr>
+                    <td className="topic">鈉 / Sodium</td>
+                    <td>{parseFloat(food[16].toString()).toFixed(1)}克/g</td>
+                    <td>{parseFloat(food[28].toString()).toFixed(1)}克/g</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-          <div className="table-body-container">
-            <table>
-              <thead>
-                <tr>
-                  <th></th>
-                  <th>每100克 / Per100g</th>
-                  <th>
-                    每食用份量 / Per Serving <br /> (一碟 = 500g)
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className="topic">能量 / Energy</td>
-                  <td>120千卡/kcal</td>
-                  <td>600千卡/kcal</td>
-                </tr>
-                <tr>
-                  <td className="topic">蛋白質 / Protein</td>
-                  <td>6克/g</td>
-                  <td>29克/g</td>
-                </tr>
-                <tr>
-                  <td className="topic">總脂肪 / Total fat</td>
-                  <td>16.9克/g</td>
-                  <td>27.5克/g</td>
-                </tr>
-                <tr>
-                  <td className="topic">- 飽和脂肪 / Saturated fat</td>
-                  <td>16.9克/g</td>
-                  <td>27.5克/g</td>
-                </tr>
-                <tr>
-                  <td className="topic">- 反式脂肪 / Trans fat</td>
-                  <td>16.9克/g</td>
-                  <td>27.5克/g</td>
-                </tr>
-                <tr>
-                  <td className="topic">碳水化合物 / Carbohydrates</td>
-                  <td>16.9克/g</td>
-                  <td>27.5克/g</td>
-                </tr>
-                <tr>
-                  <td className="topic">糖 / Sugars</td>
-                  <td>16.9克/g</td>
-                  <td>27.5克/g</td>
-                </tr>
-                <tr>
-                  <td className="topic">鈉 / Sodium</td>
-                  <td>16.9克/g</td>
-                  <td>27.5克/g</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       <style jsx>{`
         section {
@@ -107,16 +112,17 @@ const Information: React.FC = () => {
           letter-spacing: 1.2px;
         }
 
-        tr:not(:last-child) {
+        table tr:not(:last-child) {
           border-bottom: 1px solid var(--secondaryColor);
         }
 
         table thead tr {
-          border-width: 2px;
+          border-bottom: 2px solid var(--secondaryColor);
         }
 
         table td:not(.topic) {
-          text-align: center;
+          text-align: right;
+          padding-right: 30px;
         }
 
         table td.topic {
@@ -132,6 +138,8 @@ const Information: React.FC = () => {
         table th {
           font-size: 1.1rem;
           font-weight: bold;
+          text-align: right;
+          padding-right: 10px;
         }
 
         table td.topic {
