@@ -42,6 +42,17 @@ const SearchResult: React.FC<Props> = ({ result }) => {
           color: white;
           font-weight: bold;
           font-size: 1.4rem;
+          text-align: center;
+        }
+
+        @media only screen and (max-width: 550px) {
+          .food-item {
+            border-radius: 20px;
+          }
+
+          .food-item-name {
+            font-size: 0.9rem;
+          }
         }
       `}</style>
     </>

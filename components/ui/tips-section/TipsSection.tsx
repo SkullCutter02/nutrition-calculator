@@ -21,6 +21,21 @@ const TipsSection: React.FC = () => {
           width: 60%;
           margin: 7px auto;
           font-weight: bold;
+          font-size: 1rem;
+        }
+
+        @media only screen and (max-width: 800px) {
+          section {
+            width: 80%;
+            font-size: 0.8rem;
+          }
+        }
+
+        @media only screen and (max-width: 650px) {
+          section {
+            width: 90%;
+            font-size: 0.7rem;
+          }
         }
       `}</style>
     </>

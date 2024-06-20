@@ -84,9 +84,9 @@ const Information: React.FC = () => {
         .table-body-container {
           width: 100%;
           padding: 25px 60px;
-          background: #fff;
           border-bottom-left-radius: 20px;
           border-bottom-right-radius: 20px;
+          background: white;
         }
 
         table {
@@ -131,6 +131,7 @@ const Information: React.FC = () => {
         table th {
           padding-top: 5px;
           padding-bottom: 5px;
+          background: white;
         }
 
         table th {
@@ -142,6 +143,30 @@ const Information: React.FC = () => {
 
         table td.topic {
           font-weight: bold;
+        }
+
+        @media only screen and (max-width: 800px) {
+          .table-container {
+            width: 95%;
+          }
+
+          .table-body-container {
+            padding: 25px 30px;
+          }
+
+          table td.topic {
+            padding-left: 30px;
+          }
+        }
+
+        @media only screen and (max-width: 600px) {
+          .table-body-container {
+            overflow: scroll;
+          }
+
+          table {
+            width: 600px;
+          }
         }
       `}</style>
     </>

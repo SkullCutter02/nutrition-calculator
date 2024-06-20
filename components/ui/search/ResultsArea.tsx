@@ -79,6 +79,47 @@ const ResultsArea: React.FC<Props> = ({ results }) => {
           right: 85px;
           cursor: pointer;
         }
+
+        @media only screen and (max-width: 1050px) {
+          .results-area {
+            padding: 100px 70px 40px calc(140px - 60px);
+          }
+
+          .arrow-left {
+            left: 35px;
+          }
+
+          .arrow-right {
+            right: 30px;
+          }
+        }
+
+        @media only screen and (max-width: 800px) {
+          .results-area {
+            width: 100%;
+            border-radius: initial;
+            padding: 100px 60px 40px 60px;
+          }
+
+          .results-area::before {
+            display: none;
+          }
+
+          .arrow-left {
+            left: 30px;
+          }
+
+          .arrow-right {
+            right: 30px;
+          }
+        }
+
+        @media only screen and (max-width: 550px) {
+          .results-area {
+            column-gap: 10px;
+            row-gap: 15px;
+          }
+        }
       `}</style>
     </>
   );

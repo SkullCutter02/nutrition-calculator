@@ -68,6 +68,16 @@ const SearchArea: React.FC<Props> = ({ setResults }) => {
           border: none;
           outline: none;
         }
+
+        @media only screen and (max-width: 800px) {
+          .search-area {
+            width: 100%;
+          }
+
+          input {
+            width: 80%;
+          }
+        }
       `}</style>
     </>
   );

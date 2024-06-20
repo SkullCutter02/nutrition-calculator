@@ -32,6 +32,12 @@ const TipBox: React.FC = () => {
           line-height: 1.5em;
           margin-top: 10px;
         }
+
+        @media only screen and (max-width: 800px) {
+          .tip-box {
+            margin: 50px 0;
+          }
+        }
       `}</style>
     </>
   );

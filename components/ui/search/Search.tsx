@@ -18,6 +18,12 @@ const Search: React.FC = () => {
         section {
           display: flex;
         }
+
+        @media only screen and (max-width: 800px) {
+          section {
+            flex-direction: column;
+          }
+        }
       `}</style>
     </>
   );

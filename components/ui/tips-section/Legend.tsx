@@ -62,6 +62,15 @@ const Legend: React.FC = () => {
         .green {
           background: var(--primaryColor);
         }
+
+        @media only screen and (max-width: 700px) {
+          .red,
+          .yellow,
+          .green {
+            height: 20px;
+            width: 20px;
+          }
+        }
       `}</style>
     </>
   );

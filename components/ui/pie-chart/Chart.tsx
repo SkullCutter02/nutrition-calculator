@@ -1,10 +1,12 @@
 import React from "react";
 import { PieChart } from "react-minimal-pie-chart";
+import { useWindowWidth } from "@react-hook/window-size";
 
 import { useFoodContext } from "../../../context/FoodContext";
 
 const Chart: React.FC = () => {
   const { food } = useFoodContext();
+  const windowWidth = useWindowWidth();
 
   return (
     <>
@@ -18,8 +20,8 @@ const Chart: React.FC = () => {
           ]}
           startAngle={270}
           lineWidth={35}
-          viewBoxSize={[400, 150]}
-          center={[200, 70]}
+          viewBoxSize={[windowWidth > 850 ? 400 : 200, 150]}
+          center={[windowWidth > 850 ? 200 : 100, 70]}
           labelStyle={(dataIndex) => ({
             fontSize: "0.4rem",
             fill:
@@ -64,6 +66,14 @@ const Chart: React.FC = () => {
 
         .calorie span {
           font-size: 1.2rem;
+        }
+
+        @media only screen and (max-width: 600px) {
+          .calorie {
+            font-size: 1rem;
+            line-height: 1.4rem;
+            transform: translate(-50%, -50%);
+          }
         }
       `}</style>
     </>
