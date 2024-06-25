@@ -1,6 +1,7 @@
 import React from "react";
 
 import { useFoodContext } from "../../../context/FoodContext";
+import Legend from "../tips-section/Legend";
 
 const ThreeHighs: React.FC = () => {
   const { food } = useFoodContext();
@@ -13,7 +14,17 @@ const ThreeHighs: React.FC = () => {
           卡路里 : {parseFloat(food[9].toString()).toFixed(1)}kcal <span>/100克</span>
         </h1>
         <div className="three-highs-container">
-          <div className="fat-container nutrition-container">
+          <div
+            style={{
+              background:
+                parseFloat(food[11].toString()) > 20
+                  ? "var(--errorColor)"
+                  : parseFloat(food[11].toString()) > 3
+                    ? "var(--secondaryColor)"
+                    : "var(--primaryColor)",
+            }}
+            className="fat-container nutrition-container"
+          >
             <img src="/pictures/fat.png" alt="Fat" />
             <div>
               <p>總脂肪</p>
@@ -22,7 +33,17 @@ const ThreeHighs: React.FC = () => {
               </p>
             </div>
           </div>
-          <div className="salt-container nutrition-container">
+          <div
+            style={{
+              background:
+                parseFloat(food[16].toString()) > 600
+                  ? "var(--errorColor)"
+                  : parseFloat(food[16].toString()) > 120
+                    ? "var(--secondaryColor)"
+                    : "var(--primaryColor)",
+            }}
+            className="salt-container nutrition-container"
+          >
             <img src="/pictures/salt.png" alt="Salt" />
             <div>
               <p>鈉</p>
@@ -31,7 +52,17 @@ const ThreeHighs: React.FC = () => {
               </p>
             </div>
           </div>
-          <div className="sugar-container nutrition-container">
+          <div
+            style={{
+              background:
+                parseFloat(food[15].toString()) > 15
+                  ? "var(--errorColor)"
+                  : parseFloat(food[15].toString()) > 5
+                    ? "var(--secondaryColor)"
+                    : "var(--primaryColor)",
+            }}
+            className="sugar-container nutrition-container"
+          >
             <img src="/pictures/sugar.png" alt="Sugar" />
             <div>
               <p>糖</p>
@@ -40,6 +71,9 @@ const ThreeHighs: React.FC = () => {
               </p>
             </div>
           </div>
+        </div>
+        <div className="legend-container">
+          <Legend />
         </div>
       </section>
 
@@ -102,6 +136,11 @@ const ThreeHighs: React.FC = () => {
           font-size: 0.8rem;
         }
 
+        .legend-container {
+          margin: 20px auto;
+          width: 60%;
+        }
+
         @media only screen and (max-width: 1400px) {
           .three-highs-container {
             width: 70%;
@@ -128,13 +167,21 @@ const ThreeHighs: React.FC = () => {
             width: 90%;
             column-gap: 10px;
           }
+
+          .legend-container {
+            width: 80%;
+          }
         }
 
-        @media only screen and (max-width: 600px) {
+        @media only screen and (max-width: 650px) {
           .three-highs-container {
             width: 50%;
             row-gap: 30px;
             grid-template-columns: 1fr;
+          }
+
+          .legend-container {
+            width: 90%;
           }
         }
       `}</style>

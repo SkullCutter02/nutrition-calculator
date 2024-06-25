@@ -7,7 +7,8 @@
 
 :root {
   --primaryColor: #39AA4A;
-  --secondaryColor: #FFCC2E;
+  --secondaryColor: #F0A53B;
+  --alternativeSecondaryColor: #F0A53B;
   --importantTextColor: #0071B1;
   --secondaryTextColor: #525252;
   --errorColor: red;

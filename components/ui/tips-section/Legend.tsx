@@ -22,6 +22,10 @@ const Legend: React.FC = () => {
       </div>
 
       <style jsx>{`
+        p {
+          font-weight: bold;
+        }
+
         .explanation {
           align-self: flex-start;
           margin-bottom: 7px;
@@ -63,12 +67,24 @@ const Legend: React.FC = () => {
           background: var(--primaryColor);
         }
 
+        @media only screen and (max-width: 800px) {
+          p {
+            font-size: 0.8rem;
+          }
+        }
+
         @media only screen and (max-width: 700px) {
           .red,
           .yellow,
           .green {
             height: 20px;
             width: 20px;
+          }
+        }
+
+        @media only screen and (max-width: 650px) {
+          p {
+            font-size: 0.7rem;
           }
         }
       `}</style>
