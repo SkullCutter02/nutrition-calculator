@@ -3,7 +3,7 @@ import { Row } from "read-excel-file";
 
 import Header from "../components/ui/header/Header";
 import Search from "../components/ui/search/Search";
-import Chart from "../components/ui/pie-chart/Chart";
+import ThreeHighs from "../components/ui/three-highs/ThreeHighs";
 import Information from "../components/ui/nutritional-information/Information";
 import TipsSection from "../components/ui/tips-section/TipsSection";
 import { FoodContext } from "../context/FoodContext";
@@ -12,7 +12,7 @@ const HomePage: React.FC = () => {
   const [food, setFood] = useState<Row | null>(null);
 
   useEffect(() => {
-    const chart = document.getElementById("chart");
+    const chart = document.getElementById("three-highs");
 
     if (chart)
       window.scroll({
@@ -28,7 +28,7 @@ const HomePage: React.FC = () => {
         <Search />
         {food && (
           <>
-            <Chart />
+            <ThreeHighs />
             <Information />
             <TipsSection />
           </>
