@@ -35,7 +35,18 @@ const Information: React.FC = () => {
                 </tr>
                 <tr>
                   <td className="topic">總脂肪 / Total fat</td>
-                  <td>{parseFloat(food[11].toString()).toFixed(1)}克/g</td>
+                  <td
+                    style={{
+                      background:
+                        parseFloat(food[11].toString()) > 20
+                          ? "var(--errorColor)"
+                          : parseFloat(food[11].toString()) > 3
+                            ? "var(--secondaryColor)"
+                            : "var(--primaryColor)",
+                    }}
+                  >
+                    {parseFloat(food[11].toString()).toFixed(1)}克/g
+                  </td>
                   <td>{parseFloat(food[23].toString()).toFixed(1)}克/g</td>
                 </tr>
                 <tr>
@@ -55,12 +66,34 @@ const Information: React.FC = () => {
                 </tr>
                 <tr>
                   <td className="topic">糖 / Sugars</td>
-                  <td>{parseFloat(food[15].toString()).toFixed(1)}克/g</td>
+                  <td
+                    style={{
+                      background:
+                        parseFloat(food[15].toString()) > 15
+                          ? "var(--errorColor)"
+                          : parseFloat(food[15].toString()) > 5
+                            ? "var(--secondaryColor)"
+                            : "var(--primaryColor)",
+                    }}
+                  >
+                    {parseFloat(food[15].toString()).toFixed(1)}克/g
+                  </td>
                   <td>{parseFloat(food[27].toString()).toFixed(1)}克/g</td>
                 </tr>
                 <tr>
                   <td className="topic">鈉 / Sodium</td>
-                  <td>{parseFloat(food[16].toString()).toFixed(1)}克/g</td>
+                  <td
+                    style={{
+                      background:
+                        parseFloat(food[16].toString()) > 600
+                          ? "var(--errorColor)"
+                          : parseFloat(food[16].toString()) > 120
+                            ? "var(--secondaryColor)"
+                            : "var(--primaryColor)",
+                    }}
+                  >
+                    {parseFloat(food[16].toString()).toFixed(1)}克/g
+                  </td>
                   <td>{parseFloat(food[28].toString()).toFixed(1)}克/g</td>
                 </tr>
               </tbody>
