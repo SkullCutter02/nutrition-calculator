@@ -13,6 +13,9 @@ const SearchResult: React.FC<Props> = ({ result }) => {
     <>
       <div
         className="food-item"
+        style={{
+          backgroundImage: `url("https://lh3.googleusercontent.com/drive-viewer/AKGpihZyGSkcGN7D0xZJybAWEFEYTASw2voPoCNVa3W32JyIMfvQnyBIw_ws67w_Kllr8xtBWELdjs9bDET3DncZBcHpjLIyuhrDDN8=s1600-rw-v1")`,
+        }}
         onClick={() => {
           if (result) setFood(result);
         }}
@@ -36,6 +39,18 @@ const SearchResult: React.FC<Props> = ({ result }) => {
           align-items: center;
           justify-content: center;
           cursor: ${result ? "pointer" : "initial"};
+          background-size: cover;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .food-item::before {
+          position: absolute;
+          content: "";
+          width: 100%;
+          height: 100%;
+          background: black;
+          opacity: 20%;
         }
 
         .food-item-name {
@@ -43,6 +58,7 @@ const SearchResult: React.FC<Props> = ({ result }) => {
           font-weight: bold;
           font-size: 1.4rem;
           text-align: center;
+          z-index: 2;
         }
 
         @media only screen and (max-width: 550px) {
