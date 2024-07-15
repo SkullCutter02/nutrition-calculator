@@ -9,11 +9,12 @@ const Footer: React.FC = () => {
       <style jsx>{`
         button {
           color: #fff;
-          padding: 5px 20px;
+          padding: 10px 30px;
           border-radius: 20px;
           border: none;
           margin-bottom: 15px;
           cursor: pointer;
+          font-size: 1rem;
         }
 
         .yellow {
