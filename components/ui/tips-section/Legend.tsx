@@ -60,7 +60,7 @@ const Legend: React.FC = () => {
         }
 
         .yellow {
-          background: var(--secondaryColor);
+          background: var(--alternativeSecondaryColor);
         }
 
         .green {

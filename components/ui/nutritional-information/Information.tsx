@@ -41,7 +41,7 @@ const Information: React.FC = () => {
                         parseFloat(food[11].toString()) > 20
                           ? "var(--errorColor)"
                           : parseFloat(food[11].toString()) > 3
-                            ? "var(--secondaryColor)"
+                            ? "var(--alternativeSecondaryColor)"
                             : "var(--primaryColor)",
                     }}
                   >
@@ -72,7 +72,7 @@ const Information: React.FC = () => {
                         parseFloat(food[15].toString()) > 15
                           ? "var(--errorColor)"
                           : parseFloat(food[15].toString()) > 5
-                            ? "var(--secondaryColor)"
+                            ? "var(--alternativeSecondaryColor)"
                             : "var(--primaryColor)",
                     }}
                   >
@@ -88,7 +88,7 @@ const Information: React.FC = () => {
                         parseFloat(food[16].toString()) > 600
                           ? "var(--errorColor)"
                           : parseFloat(food[16].toString()) > 120
-                            ? "var(--secondaryColor)"
+                            ? "var(--alternativeSecondaryColor)"
                             : "var(--primaryColor)",
                     }}
                   >
@@ -106,7 +106,7 @@ const Information: React.FC = () => {
         section {
           width: 100%;
           background: var(--secondaryColor);
-          padding: 10px 0;
+          padding: 30px 0;
         }
 
         .table-container {

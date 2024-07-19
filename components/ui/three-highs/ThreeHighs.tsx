@@ -25,7 +25,7 @@ const ThreeHighs: React.FC = () => {
                 parseFloat(food[11].toString()) > 20
                   ? "var(--errorColor)"
                   : parseFloat(food[11].toString()) > 3
-                    ? "var(--secondaryColor)"
+                    ? "var(--alternativeSecondaryColor)"
                     : "var(--primaryColor)",
             }}
             className="fat-container nutrition-container"
@@ -44,7 +44,7 @@ const ThreeHighs: React.FC = () => {
                 parseFloat(food[16].toString()) > 600
                   ? "var(--errorColor)"
                   : parseFloat(food[16].toString()) > 120
-                    ? "var(--secondaryColor)"
+                    ? "var(--alternativeSecondaryColor)"
                     : "var(--primaryColor)",
             }}
             className="salt-container nutrition-container"
@@ -63,7 +63,7 @@ const ThreeHighs: React.FC = () => {
                 parseFloat(food[15].toString()) > 15
                   ? "var(--errorColor)"
                   : parseFloat(food[15].toString()) > 5
-                    ? "var(--secondaryColor)"
+                    ? "var(--alternativeSecondaryColor)"
                     : "var(--primaryColor)",
             }}
             className="sugar-container nutrition-container"
