@@ -10,6 +10,11 @@ const ThreeHighs: React.FC = () => {
     <>
       <section id="three-highs">
         <h1 className="food-name">{food[5].toString()}</h1>
+        <img
+          src="https://lh3.googleusercontent.com/drive-viewer/AKGpihZyGSkcGN7D0xZJybAWEFEYTASw2voPoCNVa3W32JyIMfvQnyBIw_ws67w_Kllr8xtBWELdjs9bDET3DncZBcHpjLIyuhrDDN8=s1600-rw-v1"
+          alt=""
+          className="food-picture"
+        />
         <h1 className="calories">
           卡路里 : {parseFloat(food[9].toString()).toFixed(1)}kcal <span>/100克</span>
         </h1>
@@ -90,6 +95,16 @@ const ThreeHighs: React.FC = () => {
           color: var(--secondaryTextColor);
         }
 
+        .food-picture {
+          width: 20%;
+          aspect-ratio: 1 / 1;
+          object-fit: cover;
+          overflow: hidden;
+          margin: 30px auto;
+          display: block;
+          border-radius: 40px;
+        }
+
         .calories {
           margin: 30px 0;
           text-align: center;
@@ -146,9 +161,6 @@ const ThreeHighs: React.FC = () => {
             width: 70%;
             column-gap: 25px;
           }
-
-          .nutrtion-calculator {
-          }
         }
 
         @media only screen and (max-width: 1000px) {
@@ -159,6 +171,10 @@ const ThreeHighs: React.FC = () => {
 
           .nutrition-container p {
             font-size: 1.2rem;
+          }
+
+          .food-picture {
+            width: 40%;
           }
         }
 
@@ -182,6 +198,10 @@ const ThreeHighs: React.FC = () => {
 
           .legend-container {
             width: 90%;
+          }
+
+          .food-picture {
+            width: 50%;
           }
         }
       `}</style>
