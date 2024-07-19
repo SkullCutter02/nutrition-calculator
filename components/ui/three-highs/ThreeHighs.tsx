@@ -131,18 +131,18 @@ const ThreeHighs: React.FC = () => {
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: space-between;
+          justify-content: space-around;
         }
 
         .nutrition-container img {
-          width: 70%;
+          width: 60%;
           display: block;
           margin: 0 auto;
         }
 
         .nutrition-container p {
           color: #fff;
-          font-size: 1.35rem;
+          font-size: 1.7rem;
           font-weight: bold;
           text-align: center;
         }
