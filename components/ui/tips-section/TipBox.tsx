@@ -1,11 +1,14 @@
 import React from "react";
+import { useFoodContext } from "../../../context/FoodContext";
 
 const TipBox: React.FC = () => {
+  const { food } = useFoodContext();
+
   return (
     <>
       <div className="tip-box">
         <h1>飲食貼士</h1>
-        <p>牛肉含豐富鐵質及蛋白質, 建議選擇鮮牛肉, 脂肪含量較低。例如:雪菜肉絲湯米粉。</p>
+        <p>{food[31]?.toString() || "We don't have tips yet!"}</p>
       </div>
 
       <style jsx>{`
@@ -36,6 +39,7 @@ const TipBox: React.FC = () => {
         @media only screen and (max-width: 800px) {
           .tip-box {
             margin: 50px 0;
+            width: 80%;
           }
         }
       `}</style>
