@@ -13,9 +13,7 @@ const SearchResult: React.FC<Props> = ({ result }) => {
     <>
       <div
         className="food-item"
-        style={{
-          backgroundImage: `url("https://lh3.googleusercontent.com/drive-viewer/AKGpihZyGSkcGN7D0xZJybAWEFEYTASw2voPoCNVa3W32JyIMfvQnyBIw_ws67w_Kllr8xtBWELdjs9bDET3DncZBcHpjLIyuhrDDN8=s1600-rw-v1")`,
-        }}
+        style={{ backgroundImage: `url("${result && result[30]}"), url("https://placehold.co/100")` }}
         onClick={() => {
           if (result) setFood(result);
         }}

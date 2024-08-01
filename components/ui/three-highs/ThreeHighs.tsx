@@ -11,8 +11,8 @@ const ThreeHighs: React.FC = () => {
       <section id="three-highs">
         <h1 className="food-name">{food[5].toString()}</h1>
         <img
-          src="https://lh3.googleusercontent.com/drive-viewer/AKGpihZyGSkcGN7D0xZJybAWEFEYTASw2voPoCNVa3W32JyIMfvQnyBIw_ws67w_Kllr8xtBWELdjs9bDET3DncZBcHpjLIyuhrDDN8=s1600-rw-v1"
-          alt=""
+          src={food[30]?.toString() || "https://placehold.co/100"}
+          alt={food[5].toString()}
           className="food-picture"
         />
         <h1 className="calories">
