@@ -51,7 +51,7 @@ const ThreeHighs: React.FC = () => {
           >
             <img src="/pictures/salt.png" alt="Salt" />
             <div>
-              <p>鈉</p>
+              <p>鈉 (鹽)</p>
               <p>
                 {parseFloat(food[16].toString()).toFixed(1)}g <span>/100g</span>
               </p>
