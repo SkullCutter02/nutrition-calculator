@@ -44,14 +44,29 @@ const SearchResult: React.FC<Props> = ({ result }) => {
           overflow: hidden;
         }
 
+        // temporary fix for aspect ratio not working in safari
         .food-item::before {
-          position: absolute;
+          float: left;
+          padding-top: 100%;
           content: "";
-          width: 100%;
-          height: 100%;
-          background: black;
-          opacity: 20%;
         }
+
+        .food-item::after {
+          display: block;
+          content: "";
+          clear: both;
+        }
+
+        // would add later
+
+        //.food-item::after {
+        //  position: absolute;
+        //  content: "";
+        //  width: 100%;
+        //  height: 100%;
+        //  background: black;
+        //  opacity: 20%;
+        //}
 
         .food-item-name {
           color: white;
