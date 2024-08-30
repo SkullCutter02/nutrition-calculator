@@ -26,7 +26,6 @@ const SearchResult: React.FC<Props> = ({ result }) => {
       <style jsx>{`
         .food-item {
           width: 100%;
-          height: 100%;
           background: ${result
             ? food && food[5].toString() === result[5].toString()
               ? "blue"
@@ -44,29 +43,14 @@ const SearchResult: React.FC<Props> = ({ result }) => {
           overflow: hidden;
         }
 
-        // temporary fix for aspect ratio not working in safari
-        .food-item::before {
-          float: left;
-          padding-top: 100%;
-          content: "";
-        }
-
         .food-item::after {
-          display: block;
+          position: absolute;
           content: "";
-          clear: both;
+          width: 100%;
+          height: 100%;
+          background: black;
+          opacity: 20%;
         }
-
-        // would add later
-
-        //.food-item::after {
-        //  position: absolute;
-        //  content: "";
-        //  width: 100%;
-        //  height: 100%;
-        //  background: black;
-        //  opacity: 20%;
-        //}
 
         .food-item-name {
           color: white;
