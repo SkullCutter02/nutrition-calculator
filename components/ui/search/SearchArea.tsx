@@ -53,15 +53,15 @@ const SearchArea: React.FC<Props> = ({ setResults }) => {
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
-        <FoodCategory categoryName={"Dine Out Dishes"} setCategory={setCategory} currentCategory={category} />
-        <FoodCategory categoryName={"HK Delicacies"} setCategory={setCategory} currentCategory={category} />
-        <FoodCategory categoryName={"Beverages"} setCategory={setCategory} currentCategory={category} />
-        <FoodCategory categoryName={"Breakfast Foods"} setCategory={setCategory} currentCategory={category} />
-        <FoodCategory categoryName={"Snacks"} setCategory={setCategory} currentCategory={category} />
-        <FoodCategory categoryName={"HK Bakery"} setCategory={setCategory} currentCategory={category} />
-        <FoodCategory categoryName={"HK Desserts"} setCategory={setCategory} currentCategory={category} />
-        <FoodCategory categoryName={"Condiments"} setCategory={setCategory} currentCategory={category} />
-        <FoodCategory categoryName={"Fruits"} setCategory={setCategory} currentCategory={category} />
+        <FoodCategory categoryName={"外出用餐菜式"} setCategory={setCategory} currentCategory={category} />
+        <FoodCategory categoryName={"港式美食"} setCategory={setCategory} currentCategory={category} />
+        <FoodCategory categoryName={"飲品"} setCategory={setCategory} currentCategory={category} />
+        <FoodCategory categoryName={"早餐"} setCategory={setCategory} currentCategory={category} />
+        <FoodCategory categoryName={"小食/零食"} setCategory={setCategory} currentCategory={category} />
+        <FoodCategory categoryName={"麵包"} setCategory={setCategory} currentCategory={category} />
+        <FoodCategory categoryName={"港式甜品"} setCategory={setCategory} currentCategory={category} />
+        <FoodCategory categoryName={"調味料"} setCategory={setCategory} currentCategory={category} />
+        <FoodCategory categoryName={"水果"} setCategory={setCategory} currentCategory={category} />
       </div>
 
       <style jsx>{`
