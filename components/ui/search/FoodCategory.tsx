@@ -17,6 +17,8 @@ const FoodCategory: React.FC<Props> = ({ categoryName, setCategory, currentCateg
           onClick={() => setCategory(categoryName)}
           style={{
             pointerEvents: currentCategory && currentCategory === categoryName ? "none" : "initial",
+            background: currentCategory && currentCategory === categoryName ? "var(--primaryColor)" : "#fff",
+            color: currentCategory && currentCategory === categoryName ? "#fff" : "var(--primaryColor)",
           }}
         >
           {categoryName}
@@ -41,17 +43,21 @@ const FoodCategory: React.FC<Props> = ({ categoryName, setCategory, currentCateg
         .food-category {
           width: 100%;
           cursor: pointer;
-          border: red;
-          padding: 10px;
+          border: none;
+          padding-top: 13px; // counter weird css offset
+          padding-bottom: 10px;
           font-size: 1rem;
           background: #fff;
+          border-radius: 50px;
+          font-weight: bold;
+          color: var(--primaryColor);
         }
 
         span {
           cursor: pointer;
           font-size: 20px;
           font-weight: bold;
-          color: #000;
+          color: #fff;
           position: absolute;
           top: 50%;
           left: 90%;
