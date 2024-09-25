@@ -13,23 +13,6 @@ const SearchArea: React.FC<Props> = ({ setResults }) => {
 
   const [dInput] = useDebounce(input, 500);
 
-  // useEffect(() => {
-  //   fetch("/food-data.xlsx")
-  //     .then((res) => res.blob())
-  //     .then((blob) => readXlsxFile(blob))
-  //     .then((rows) => {
-  //       setResults([]);
-  //
-  //       // start from 4 as the excel sheet has 3 rows of introductory information at the top
-  //       for (let i = 4; i < rows.length; i++) {
-  //         // rows[i][5] collects the Chinese name of each food
-  //         if (rows[i][5] && rows[i][5].toString().includes(dInput.trim())) {
-  //           setResults((prev) => [...prev, rows[i]]);
-  //         }
-  //       }
-  //     });
-  // }, [dInput]);
-
   useEffect(() => {
     console.log("hee");
 
