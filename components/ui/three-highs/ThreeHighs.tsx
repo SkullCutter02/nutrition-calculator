@@ -11,7 +11,11 @@ const ThreeHighs: React.FC = () => {
       <section id="three-highs">
         <h1 className="food-name">{food[5].toString()}</h1>
         <img
-          src={`https://drive.google.com/thumbnail?id=${food[30]}` || "https://placehold.co/100"}
+          src={
+            food[30].toString() !== "#ERROR_#N/A"
+              ? `https://drive.google.com/thumbnail?id=${food[30]}`
+              : "https://placehold.co/100"
+          }
           alt={food[5].toString()}
           className="food-picture"
         />
