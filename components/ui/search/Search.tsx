@@ -19,7 +19,7 @@ const Search: React.FC = () => {
           display: flex;
         }
 
-        @media only screen and (max-width: 800px) {
+        @media only screen and (max-width: 1200px) {
           section {
             flex-direction: column;
           }

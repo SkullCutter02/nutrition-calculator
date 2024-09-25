@@ -91,7 +91,7 @@ const SearchArea: React.FC<Props> = ({ setResults }) => {
           outline: none;
         }
 
-        @media only screen and (max-width: 800px) {
+        @media only screen and (max-width: 1200px) {
           .search-area {
             width: 100%;
           }

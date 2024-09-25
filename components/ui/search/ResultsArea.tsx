@@ -94,7 +94,7 @@ const ResultsArea: React.FC<Props> = ({ results }) => {
           }
         }
 
-        @media only screen and (max-width: 800px) {
+        @media only screen and (max-width: 1200px) {
           .results-area {
             width: 100%;
             border-radius: initial;
