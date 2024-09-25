@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDebounce } from "use-debounce";
 import readXlsxFile, { Row } from "read-excel-file";
+import FoodCategory from "./FoodCategory";
 
 interface Props {
   setResults: React.Dispatch<React.SetStateAction<Row[]>>;
@@ -8,6 +9,7 @@ interface Props {
 
 const SearchArea: React.FC<Props> = ({ setResults }) => {
   const [input, setInput] = useState<string>("");
+  const [category, setCategory] = useState<string | null>(null);
 
   const [dInput] = useDebounce(input, 500);
 
@@ -28,6 +30,8 @@ const SearchArea: React.FC<Props> = ({ setResults }) => {
       });
   }, [dInput]);
 
+  useEffect(() => {}, [category]);
+
   return (
     <>
       <div className="search-area">
@@ -40,6 +44,15 @@ const SearchArea: React.FC<Props> = ({ setResults }) => {
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
+        <FoodCategory categoryName={"Dine Out Dishes"} setCategory={setCategory} currentCategory={category} />
+        <FoodCategory categoryName={"HK Delicacies"} setCategory={setCategory} currentCategory={category} />
+        <FoodCategory categoryName={"Beverages"} setCategory={setCategory} currentCategory={category} />
+        <FoodCategory categoryName={"Breakfast Foods"} setCategory={setCategory} currentCategory={category} />
+        <FoodCategory categoryName={"Snacks"} setCategory={setCategory} currentCategory={category} />
+        <FoodCategory categoryName={"HK Bakery"} setCategory={setCategory} currentCategory={category} />
+        <FoodCategory categoryName={"HK Desserts"} setCategory={setCategory} currentCategory={category} />
+        <FoodCategory categoryName={"Condiments"} setCategory={setCategory} currentCategory={category} />
+        <FoodCategory categoryName={"Fruits"} setCategory={setCategory} currentCategory={category} />
       </div>
 
       <style jsx>{`
