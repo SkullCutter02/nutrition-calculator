@@ -4,7 +4,7 @@ const Header: React.FC = () => {
   return (
     <>
       <header>
-        <img src="/logo.webp" alt="HKU Med" className="logo" />
+        {/*<img src="/logo.webp" alt="HKU Med" className="logo" />*/}
         <h1>營養計算機</h1>
       </header>
 
