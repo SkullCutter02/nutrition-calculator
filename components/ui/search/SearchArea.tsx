@@ -30,7 +30,26 @@ const SearchArea: React.FC<Props> = ({ setResults }) => {
       });
   }, [dInput]);
 
-  useEffect(() => {}, [category]);
+  useEffect(() => {
+    console.log("hee");
+
+    fetch("/food-data.xlsx")
+      .then((res) => res.blob())
+      .then((blob) => readXlsxFile(blob))
+      .then((rows) => {
+        setResults([]);
+
+        // start from 4 as the excel sheet has 3 rows of introductory information at the top
+        for (let i = 4; i < rows.length; i++) {
+          // rows[i][5] collects the Chinese name of each food
+          if (category && rows[i][1] && rows[i][1].toString() === category) {
+            setResults((prev) => [...prev, rows[i]]);
+          } else if (category === null) {
+            setResults((prev) => [...prev, rows[i]]);
+          }
+        }
+      });
+  }, [category]);
 
   return (
     <>
