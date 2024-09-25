@@ -11,17 +11,19 @@ const SearchResult: React.FC<Props> = ({ result }) => {
 
   return (
     <>
-      <div
-        className="food-item"
-        style={{
-          backgroundImage: `url("https://drive.google.com/thumbnail?id=${result && result[30]}"), url("https://placehold.co/100")`,
-        }}
-        onClick={() => {
-          if (result) setFood(result);
-        }}
-      >
-        {result && <p className="food-item-name">{result[5].toString()}</p>}
-      </div>
+      {result && (
+        <div
+          className="food-item"
+          style={{
+            backgroundImage: `url("https://drive.google.com/thumbnail?id=${result && result[30]}"), url("https://placehold.co/100")`,
+          }}
+          onClick={() => {
+            if (result) setFood(result);
+          }}
+        >
+          {result && <p className="food-item-name">{result[5].toString()}</p>}
+        </div>
+      )}
 
       <style jsx>{`
         .food-item {
