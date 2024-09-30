@@ -3,8 +3,12 @@ import React from "react";
 const Footer: React.FC = () => {
   return (
     <>
-      <button className="yellow">搜尋其他食物的營養資料</button>
-      <button className="green">更多預防中風及其他疾病的營養資貼士</button>
+      <button className="yellow" onClick={() => window.scroll({ top: 0, behavior: "smooth" })}>
+        搜尋其他食物的營養資料
+      </button>
+      <a href="https://www.stroke.med.hku.hk/diet-tips" target="_blank">
+        <button className="green">更多預防中風及其他疾病的營養資貼士</button>
+      </a>
 
       <style jsx>{`
         button {
