@@ -18,7 +18,7 @@ const Information: React.FC = () => {
                   <th></th>
                   <th>每100克 / Per100g</th>
                   <th>
-                    每食用份量 / Per Serving <br /> ({food[18].toString()} = 500g)
+                    每食用份量 / Per Serving <br /> ({food[18].toString()} = {food[19].toString()}g)
                   </th>
                 </tr>
               </thead>
