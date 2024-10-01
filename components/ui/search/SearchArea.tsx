@@ -14,8 +14,6 @@ const SearchArea: React.FC<Props> = ({ setResults }) => {
   const [dInput] = useDebounce(input, 500);
 
   useEffect(() => {
-    console.log("hee");
-
     fetch("/food-data.xlsx")
       .then((res) => res.blob())
       .then((blob) => readXlsxFile(blob))
