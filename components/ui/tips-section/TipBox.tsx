@@ -6,10 +6,19 @@ const TipBox: React.FC = () => {
 
   return (
     <>
-      <div className="tip-box">
-        <h1>飲食貼士</h1>
-        <p>{food[31]?.toString() || "We don't have tips yet!"}</p>
-      </div>
+      {
+        <div className="tip-box">
+          <h1>飲食貼士</h1>
+          <p>
+            {food[31]?.toString() !== "" && food[31].toString().split("請按此")[0]}
+            {food[32]?.toString() !== "" && (
+              <a href={food[32]?.toString()} target="_blank">
+                請按此{food[31]?.toString().split("請按此")[1]}
+              </a>
+            )}
+          </p>
+        </div>
+      }
 
       <style jsx>{`
         .tip-box {
@@ -34,6 +43,10 @@ const TipBox: React.FC = () => {
           color: #fff;
           line-height: 1.5em;
           margin-top: 10px;
+        }
+
+        .tip-box a {
+          color: #3636e8;
         }
 
         @media only screen and (max-width: 800px) {
