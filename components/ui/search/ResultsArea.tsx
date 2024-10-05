@@ -116,8 +116,20 @@ const ResultsArea: React.FC<Props> = ({ results }) => {
 
         @media only screen and (max-width: 550px) {
           .results-area {
+            padding: 20px 32px;
+          }
+
+          .results-area {
             column-gap: 7px;
             row-gap: 7px;
+          }
+
+          .arrow-left {
+            left: 10px;
+          }
+
+          .arrow-right {
+            right: 10px;
           }
         }
       `}</style>
