@@ -37,7 +37,8 @@ const FoodCategory: React.FC<Props> = ({ categoryName, setCategory, currentCateg
         .food-category-container {
           position: relative;
           width: 50%;
-          margin-top: 20px;
+          margin: 0 auto;
+          //margin-top: 20px;
         }
 
         .food-category {
@@ -64,6 +65,12 @@ const FoodCategory: React.FC<Props> = ({ categoryName, setCategory, currentCateg
           transform: translate(-50%, -50%);
           z-index: 100;
           padding: 10px;
+        }
+
+        @media only screen and (max-width: 1200px) {
+          .food-category-container {
+            width: 90%;
+          }
         }
       `}</style>
     </>

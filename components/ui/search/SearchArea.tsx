@@ -51,15 +51,17 @@ const SearchArea: React.FC<Props> = ({ setResults }) => {
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
-        <FoodCategory categoryName={"外出用餐菜式"} setCategory={setCategory} currentCategory={category} />
-        <FoodCategory categoryName={"港式美食"} setCategory={setCategory} currentCategory={category} />
-        <FoodCategory categoryName={"飲品"} setCategory={setCategory} currentCategory={category} />
-        <FoodCategory categoryName={"早餐"} setCategory={setCategory} currentCategory={category} />
-        <FoodCategory categoryName={"小食/零食"} setCategory={setCategory} currentCategory={category} />
-        <FoodCategory categoryName={"麵包"} setCategory={setCategory} currentCategory={category} />
-        <FoodCategory categoryName={"港式甜品"} setCategory={setCategory} currentCategory={category} />
-        <FoodCategory categoryName={"調味料"} setCategory={setCategory} currentCategory={category} />
-        <FoodCategory categoryName={"水果"} setCategory={setCategory} currentCategory={category} />
+        <div className="food-categories">
+          <FoodCategory categoryName={"外出用餐菜式"} setCategory={setCategory} currentCategory={category} />
+          <FoodCategory categoryName={"港式美食"} setCategory={setCategory} currentCategory={category} />
+          <FoodCategory categoryName={"飲品"} setCategory={setCategory} currentCategory={category} />
+          <FoodCategory categoryName={"早餐"} setCategory={setCategory} currentCategory={category} />
+          <FoodCategory categoryName={"小食/零食"} setCategory={setCategory} currentCategory={category} />
+          <FoodCategory categoryName={"麵包"} setCategory={setCategory} currentCategory={category} />
+          <FoodCategory categoryName={"港式甜品"} setCategory={setCategory} currentCategory={category} />
+          <FoodCategory categoryName={"調味料"} setCategory={setCategory} currentCategory={category} />
+          <FoodCategory categoryName={"水果"} setCategory={setCategory} currentCategory={category} />
+        </div>
       </div>
 
       <style jsx>{`
@@ -89,6 +91,14 @@ const SearchArea: React.FC<Props> = ({ setResults }) => {
           outline: none;
         }
 
+        .food-categories {
+          display: grid;
+          grid-template-columns: 1fr;
+          row-gap: 20px;
+          width: 94%;
+          margin: 20px auto 0 auto;
+        }
+
         @media only screen and (max-width: 1200px) {
           .search-area {
             width: 100%;
@@ -96,6 +106,11 @@ const SearchArea: React.FC<Props> = ({ setResults }) => {
 
           input {
             width: 80%;
+          }
+
+          .food-categories {
+            grid-template-columns: repeat(2, 1fr);
+            //column-gap: 50px;
           }
         }
       `}</style>
