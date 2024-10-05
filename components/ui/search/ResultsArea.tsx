@@ -98,7 +98,7 @@ const ResultsArea: React.FC<Props> = ({ results }) => {
           .results-area {
             width: 100%;
             border-radius: initial;
-            padding: 40px;
+            padding: 20px 40px;
           }
 
           .results-area::before {
