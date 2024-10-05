@@ -98,7 +98,7 @@ const ResultsArea: React.FC<Props> = ({ results }) => {
           .results-area {
             width: 100%;
             border-radius: initial;
-            padding: 40px 60px 40px 60px;
+            padding: 40px;
           }
 
           .results-area::before {
@@ -106,18 +106,18 @@ const ResultsArea: React.FC<Props> = ({ results }) => {
           }
 
           .arrow-left {
-            left: 30px;
+            left: 15px;
           }
 
           .arrow-right {
-            right: 30px;
+            right: 15px;
           }
         }
 
         @media only screen and (max-width: 550px) {
           .results-area {
-            column-gap: 10px;
-            row-gap: 15px;
+            column-gap: 7px;
+            row-gap: 7px;
           }
         }
       `}</style>
