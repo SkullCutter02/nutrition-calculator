@@ -71,6 +71,16 @@ const FoodCategory: React.FC<Props> = ({ categoryName, setCategory, currentCateg
           .food-category-container {
             width: 90%;
           }
+
+          .food-category {
+            font-size: 0.9rem;
+          }
+        }
+
+        @media only screen and (max-width: 700px) {
+          .food-category {
+            font-size: 0.8rem;
+          }
         }
       `}</style>
     </>
