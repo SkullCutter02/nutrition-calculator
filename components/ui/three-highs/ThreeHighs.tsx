@@ -10,13 +10,10 @@ const ThreeHighs: React.FC = () => {
     <>
       <section id="three-highs">
         <h1 className="food-name">{food[5].toString()}</h1>
-        <img
-          src={
-            food[30].toString() !== "#ERROR_#N/A"
-              ? `https://drive.google.com/thumbnail?id=${food[30]}`
-              : "https://placehold.co/100"
-          }
-          alt={food[5].toString()}
+        <div
+          style={{
+            backgroundImage: `url("https://drive.google.com/thumbnail?id=${food[30]}&sz=w300"), url("https://drive.google.com/thumbnail?id=${(food[30] as string).match(/[-\w]{25,}/)}&sz=w300"), url("https://placehold.co/100")`,
+          }}
           className="food-picture"
         />
         <h1 className="calories">
@@ -107,6 +104,7 @@ const ThreeHighs: React.FC = () => {
           margin: 30px auto;
           display: block;
           border-radius: 40px;
+          background-size: cover;
         }
 
         .calories {
