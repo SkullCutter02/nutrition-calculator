@@ -9,32 +9,33 @@ const Information: React.FC = () => {
       <section>
         <div className="table-container">
           <div className="table-header">
-            <p>營養資料 Nutrition Information</p>
+            <p>營養資料</p>
           </div>
           <div className="table-body-container">
             <table>
               <thead>
                 <tr>
                   <th></th>
-                  <th>每100克 / Per100g</th>
+                  <th>每100克</th>
                   <th>
-                    每食用份量 / Per Serving <br /> ({food[18].toString()} = {food[19].toString()}g)
+                    每食用份量
+                    <br /> ({food[18].toString()} = {food[19].toString()}克)
                   </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td className="topic">能量 / Energy</td>
-                  <td>{parseFloat(food[9].toString()).toFixed(1)}千卡/kcal</td>
-                  <td>{parseFloat(food[21].toString()).toFixed(1)}千卡/kcal</td>
+                  <td className="topic">能量</td>
+                  <td>{parseFloat(food[9].toString()).toFixed(1)}千卡</td>
+                  <td>{parseFloat(food[21].toString()).toFixed(1)}千卡</td>
                 </tr>
                 <tr>
-                  <td className="topic">蛋白質 / Protein</td>
-                  <td>{parseFloat(food[10].toString()).toFixed(1)}克/g</td>
-                  <td>{parseFloat(food[22].toString()).toFixed(1)}克/g</td>
+                  <td className="topic">蛋白質</td>
+                  <td>{parseFloat(food[10].toString()).toFixed(1)}克</td>
+                  <td>{parseFloat(food[22].toString()).toFixed(1)}克</td>
                 </tr>
                 <tr>
-                  <td className="topic">總脂肪 / Total fat</td>
+                  <td className="topic">總脂肪</td>
                   <td
                     style={{
                       background:
@@ -45,27 +46,27 @@ const Information: React.FC = () => {
                             : "var(--primaryColor)",
                     }}
                   >
-                    {parseFloat(food[11].toString()).toFixed(1)}克/g
+                    {parseFloat(food[11].toString()).toFixed(1)}克
                   </td>
-                  <td>{parseFloat(food[23].toString()).toFixed(1)}克/g</td>
+                  <td>{parseFloat(food[23].toString()).toFixed(1)}克</td>
                 </tr>
                 <tr>
-                  <td className="topic">- 飽和脂肪 / Saturated fat</td>
-                  <td>{parseFloat(food[12].toString()).toFixed(1)}克/g</td>
-                  <td>{parseFloat(food[24].toString()).toFixed(1)}克/g</td>
+                  <td className="topic">- 飽和脂肪</td>
+                  <td>{parseFloat(food[12].toString()).toFixed(1)}克</td>
+                  <td>{parseFloat(food[24].toString()).toFixed(1)}克</td>
                 </tr>
                 <tr>
-                  <td className="topic">- 反式脂肪 / Trans fat</td>
-                  <td>{parseFloat(food[13].toString()).toFixed(1)}克/g</td>
-                  <td>{parseFloat(food[25].toString()).toFixed(1)}克/g</td>
+                  <td className="topic">- 反式脂肪</td>
+                  <td>{parseFloat(food[13].toString()).toFixed(1)}克</td>
+                  <td>{parseFloat(food[25].toString()).toFixed(1)}克</td>
                 </tr>
                 <tr>
-                  <td className="topic">碳水化合物 / Carbohydrates</td>
-                  <td>{parseFloat(food[14].toString()).toFixed(1)}克/g</td>
-                  <td>{parseFloat(food[26].toString()).toFixed(1)}克/g</td>
+                  <td className="topic">碳水化合物</td>
+                  <td>{parseFloat(food[14].toString()).toFixed(1)}克</td>
+                  <td>{parseFloat(food[26].toString()).toFixed(1)}克</td>
                 </tr>
                 <tr>
-                  <td className="topic">糖 / Sugars</td>
+                  <td className="topic">糖</td>
                   <td
                     style={{
                       background:
@@ -76,12 +77,12 @@ const Information: React.FC = () => {
                             : "var(--primaryColor)",
                     }}
                   >
-                    {parseFloat(food[15].toString()).toFixed(1)}克/g
+                    {parseFloat(food[15].toString()).toFixed(1)}克
                   </td>
-                  <td>{parseFloat(food[27].toString()).toFixed(1)}克/g</td>
+                  <td>{parseFloat(food[27].toString()).toFixed(1)}克</td>
                 </tr>
                 <tr>
-                  <td className="topic">鈉 / Sodium</td>
+                  <td className="topic">鈉</td>
                   <td
                     style={{
                       background:
@@ -92,9 +93,9 @@ const Information: React.FC = () => {
                             : "var(--primaryColor)",
                     }}
                   >
-                    {parseFloat(food[16].toString()).toFixed(1)}克/g
+                    {parseFloat(food[16].toString()).toFixed(1)}克
                   </td>
-                  <td>{parseFloat(food[28].toString()).toFixed(1)}克/g</td>
+                  <td>{parseFloat(food[28].toString()).toFixed(1)}克</td>
                 </tr>
               </tbody>
             </table>
