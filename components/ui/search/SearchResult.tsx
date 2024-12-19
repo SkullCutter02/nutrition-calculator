@@ -57,7 +57,7 @@ const SearchResult: React.FC<Props> = ({ result }) => {
         .food-item-name {
           color: white;
           font-weight: bold;
-          font-size: 1.4rem;
+          font-size: 1.2rem;
           text-align: center;
           z-index: 2;
         }
@@ -68,7 +68,7 @@ const SearchResult: React.FC<Props> = ({ result }) => {
           }
 
           .food-item-name {
-            font-size: 0.75rem;
+            font-size: 1.1rem;
           }
         }
       `}</style>

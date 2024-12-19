@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SearchResult from "./SearchResult";
 import { Row } from "read-excel-file";
+import useWindowSize from "../../../hooks/useWindowSize";
 
 interface Props {
   results: Row[];
@@ -8,26 +9,37 @@ interface Props {
 
 const ResultsArea: React.FC<Props> = ({ results }) => {
   const [page, setPage] = useState<number>(0);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+  const { width: windowWidth } = useWindowSize();
 
   // whenever the user inputs something, set the page count back to 0
   useEffect(() => {
     setPage(0);
   }, [results]);
 
+  useEffect(() => {
+    if (windowWidth < 600) setIsMobile(true);
+    else setIsMobile(false);
+  }, [windowWidth]);
+
   return (
     <>
       <div className="results-area">
         {page > 0 && <div className="arrow-left" onClick={() => setPage((prev) => prev - 1)} />}
-        <SearchResult result={results[9 * page]} />
-        <SearchResult result={results[9 * page + 1]} />
-        <SearchResult result={results[9 * page + 2]} />
-        <SearchResult result={results[9 * page + 3]} />
-        <SearchResult result={results[9 * page + 4]} />
-        <SearchResult result={results[9 * page + 5]} />
-        <SearchResult result={results[9 * page + 6]} />
-        <SearchResult result={results[9 * page + 7]} />
-        <SearchResult result={results[9 * page + 8]} />
-        {(page + 1) * 9 < results.length && (
+        <SearchResult result={results[(isMobile ? 6 : 9) * page]} />
+        <SearchResult result={results[(isMobile ? 6 : 9) * page + 1]} />
+        <SearchResult result={results[(isMobile ? 6 : 9) * page + 2]} />
+        <SearchResult result={results[(isMobile ? 6 : 9) * page + 3]} />
+        <SearchResult result={results[(isMobile ? 6 : 9) * page + 4]} />
+        <SearchResult result={results[(isMobile ? 6 : 9) * page + 5]} />
+        {!isMobile && (
+          <>
+            <SearchResult result={results[9 * page + 6]} />
+            <SearchResult result={results[9 * page + 7]} />
+            <SearchResult result={results[9 * page + 8]} />
+          </>
+        )}
+        {(page + 1) * (isMobile ? 6 : 9) < results.length && (
           <div className="arrow-right" onClick={() => setPage((prev) => prev + 1)} />
         )}
       </div>
@@ -40,7 +52,7 @@ const ResultsArea: React.FC<Props> = ({ results }) => {
           border-top-left-radius: 170px;
           padding: 100px 150px 40px calc(170px - 60px);
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(${isMobile ? 2 : 3}, 1fr);
           column-gap: 30px;
           row-gap: 20px;
         }
