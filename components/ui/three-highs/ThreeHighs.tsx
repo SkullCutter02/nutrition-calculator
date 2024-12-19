@@ -195,7 +195,7 @@ const ThreeHighs: React.FC = () => {
 
         @media only screen and (max-width: 650px) {
           .three-highs-container {
-            width: 50%;
+            width: 60%;
             row-gap: 30px;
             grid-template-columns: 1fr;
           }

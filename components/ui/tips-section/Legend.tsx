@@ -7,15 +7,15 @@ const Legend: React.FC = () => {
         <span>* 總脂肪、糖和鈉</span>的紅綠燈標記註解 :
       </p>
       <div className="legend-container">
-        <div>
+        <div className="legend-mini-container">
           <div className="red" />
           <p>紅色 - 攝取量超標</p>
         </div>
-        <div>
+        <div className="legend-mini-container">
           <div className="yellow" />
           <p>黃色 - 攝取量輕微過高</p>
         </div>
-        <div>
+        <div className="legend-mini-container">
           <div className="green" />
           <p>綠色 - 攝取量適中</p>
         </div>
@@ -85,6 +85,16 @@ const Legend: React.FC = () => {
         @media only screen and (max-width: 650px) {
           p {
             font-size: 0.7rem;
+          }
+        }
+
+        @media only screen and (max-width: 430px) {
+          .legend-container {
+            flex-direction: column;
+          }
+
+          .legend-mini-container {
+            margin-bottom: 5px;
           }
         }
       `}</style>
