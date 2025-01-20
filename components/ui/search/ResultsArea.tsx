@@ -22,9 +22,44 @@ const ResultsArea: React.FC<Props> = ({ results }) => {
     else setIsMobile(false);
   }, [windowWidth]);
 
+  // swipe logic below
+
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null); // otherwise the swipe is fired even with usual touch events
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX);
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe && (page + 1) * (isMobile ? 6 : 9) < results.length) {
+      setPage((prev) => prev + 1);
+    }
+
+    if (isRightSwipe && page > 0) {
+      setPage((prev) => prev - 1);
+    }
+  };
+
   return (
     <>
-      <div className="results-area">
+      <div
+        className="results-area"
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+      >
         {page > 0 && <div className="arrow-left" onClick={() => setPage((prev) => prev - 1)} />}
         <SearchResult result={results[(isMobile ? 6 : 9) * page]} />
         <SearchResult result={results[(isMobile ? 6 : 9) * page + 1]} />
