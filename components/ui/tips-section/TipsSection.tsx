@@ -3,12 +3,14 @@ import React from "react";
 import Legend from "./Legend";
 import TipBox from "./TipBox";
 import Footer from "./Footer";
+import ReferenceTables from "./ReferenceTables";
 
 const TipsSection: React.FC = () => {
   return (
     <>
       <section>
         <Legend />
+        <ReferenceTables />
         <TipBox />
         <Footer />
       </section>
