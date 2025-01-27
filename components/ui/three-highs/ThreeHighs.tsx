@@ -17,7 +17,7 @@ const ThreeHighs: React.FC = () => {
           className="food-picture"
         />
         <h1 className="calories">
-          卡路里 : {parseFloat(food[9].toString()).toFixed(1)}kcal <span>/100克</span>
+          卡路里 : {parseFloat(food[9].toString()).toFixed(1)}千克 <span>/100克</span>
         </h1>
         <div className="three-highs-container">
           <div
@@ -35,7 +35,7 @@ const ThreeHighs: React.FC = () => {
             <div>
               <p>總脂肪</p>
               <p>
-                {parseFloat(food[11].toString()).toFixed(1)}g <span>/100g</span>
+                {parseFloat(food[11].toString()).toFixed(1)}克 <span>/100克</span>
               </p>
             </div>
           </div>
@@ -54,7 +54,7 @@ const ThreeHighs: React.FC = () => {
             <div>
               <p>鈉 (鹽)</p>
               <p>
-                {parseFloat(food[16].toString()).toFixed(1)}mg <span>/100g</span>
+                {parseFloat(food[16].toString()).toFixed(1)}毫克 <span>/100克</span>
               </p>
             </div>
           </div>
@@ -73,7 +73,7 @@ const ThreeHighs: React.FC = () => {
             <div>
               <p>添加糖</p>
               <p>
-                {parseFloat(food[15].toString()).toFixed(1)}g <span>/100g</span>
+                {parseFloat(food[15].toString()).toFixed(1)}克 <span>/100克</span>
               </p>
             </div>
           </div>
