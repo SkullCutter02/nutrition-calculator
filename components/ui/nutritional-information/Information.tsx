@@ -154,7 +154,6 @@ const Information: React.FC = () => {
 
         table td:not(.topic) {
           text-align: right;
-          padding-right: 30px;
         }
 
         table td.topic {
