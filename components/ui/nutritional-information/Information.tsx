@@ -54,9 +54,9 @@ const Information: React.FC = () => {
                     <p
                       style={{
                         background:
-                          parseFloat(food[23].toString()) > 20
+                          parseFloat(food[11].toString()) > 20
                             ? "var(--errorColor)"
-                            : parseFloat(food[23].toString()) > 3
+                            : parseFloat(food[11].toString()) > 3
                               ? "var(--alternativeSecondaryColor)"
                               : "var(--primaryColor)",
                       }}
@@ -100,9 +100,9 @@ const Information: React.FC = () => {
                     <p
                       style={{
                         background:
-                          parseFloat(food[27].toString()) > 15
+                          parseFloat(food[15].toString()) > 15
                             ? "var(--errorColor)"
-                            : parseFloat(food[27].toString()) > 5
+                            : parseFloat(food[15].toString()) > 5
                               ? "var(--alternativeSecondaryColor)"
                               : "var(--primaryColor)",
                       }}
@@ -131,9 +131,9 @@ const Information: React.FC = () => {
                     <p
                       style={{
                         background:
-                          parseFloat(food[28].toString()) > 600
+                          parseFloat(food[16].toString()) > 600
                             ? "var(--errorColor)"
-                            : parseFloat(food[28].toString()) > 120
+                            : parseFloat(food[16].toString()) > 120
                               ? "var(--alternativeSecondaryColor)"
                               : "var(--primaryColor)",
                       }}
