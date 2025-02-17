@@ -171,7 +171,6 @@ const Information: React.FC = () => {
           font-size: 1.1rem;
           font-weight: bold;
           text-align: right;
-          padding-right: 10px;
         }
 
         table td.topic {
