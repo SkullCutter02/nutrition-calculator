@@ -93,9 +93,9 @@ const Information: React.FC = () => {
                             : "var(--primaryColor)",
                     }}
                   >
-                    {parseFloat(food[16].toString()).toFixed(1)}克
+                    {parseFloat(food[16].toString()).toFixed(1)}毫克
                   </td>
-                  <td>{parseFloat(food[28].toString()).toFixed(1)}克</td>
+                  <td>{parseFloat(food[28].toString()).toFixed(1)}毫克</td>
                 </tr>
               </tbody>
             </table>
