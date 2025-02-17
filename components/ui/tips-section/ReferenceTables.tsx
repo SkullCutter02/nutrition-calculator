@@ -13,6 +13,8 @@ const ReferenceTables: React.FC = () => {
           width: 100%;
           display: flex;
           margin-top: 30px;
+          flex-direction: column;
+          align-items: center;
         }
 
         .table-1 {
@@ -20,21 +22,21 @@ const ReferenceTables: React.FC = () => {
         }
 
         .table-2 {
-          width: 30%;
+          width: 70%;
         }
 
         @media only screen and (max-width: 600px) {
-          .table-container {
-            flex-direction: column;
-            align-items: center;
-          }
+          //.table-container {
+          //  flex-direction: column;
+          //  align-items: center;
+          //}
 
           .table-1 {
             width: 100%;
           }
 
           .table-2 {
-            width: 40%;
+            width: 100%;
           }
         }
       `}</style>
