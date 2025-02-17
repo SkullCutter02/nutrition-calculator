@@ -36,19 +36,34 @@ const Information: React.FC = () => {
                 </tr>
                 <tr>
                   <td className="topic">總脂肪</td>
-                  <td
-                    style={{
-                      background:
-                        parseFloat(food[11].toString()) > 20
-                          ? "var(--errorColor)"
-                          : parseFloat(food[11].toString()) > 3
-                            ? "var(--alternativeSecondaryColor)"
-                            : "var(--primaryColor)",
-                    }}
-                  >
-                    {parseFloat(food[11].toString()).toFixed(1)}克
+                  <td>
+                    <p
+                      style={{
+                        background:
+                          parseFloat(food[11].toString()) > 20
+                            ? "var(--errorColor)"
+                            : parseFloat(food[11].toString()) > 3
+                              ? "var(--alternativeSecondaryColor)"
+                              : "var(--primaryColor)",
+                      }}
+                    >
+                      {parseFloat(food[11].toString()).toFixed(1)}克
+                    </p>
                   </td>
-                  <td>{parseFloat(food[23].toString()).toFixed(1)}克</td>
+                  <td>
+                    <p
+                      style={{
+                        background:
+                          parseFloat(food[23].toString()) > 20
+                            ? "var(--errorColor)"
+                            : parseFloat(food[23].toString()) > 3
+                              ? "var(--alternativeSecondaryColor)"
+                              : "var(--primaryColor)",
+                      }}
+                    >
+                      {parseFloat(food[23].toString()).toFixed(1)}克
+                    </p>
+                  </td>
                 </tr>
                 <tr>
                   <td className="topic">- 飽和脂肪</td>
@@ -67,35 +82,65 @@ const Information: React.FC = () => {
                 </tr>
                 <tr>
                   <td className="topic">糖</td>
-                  <td
-                    style={{
-                      background:
-                        parseFloat(food[15].toString()) > 15
-                          ? "var(--errorColor)"
-                          : parseFloat(food[15].toString()) > 5
-                            ? "var(--alternativeSecondaryColor)"
-                            : "var(--primaryColor)",
-                    }}
-                  >
-                    {parseFloat(food[15].toString()).toFixed(1)}克
+                  <td>
+                    <p
+                      style={{
+                        background:
+                          parseFloat(food[15].toString()) > 15
+                            ? "var(--errorColor)"
+                            : parseFloat(food[15].toString()) > 5
+                              ? "var(--alternativeSecondaryColor)"
+                              : "var(--primaryColor)",
+                      }}
+                    >
+                      {parseFloat(food[15].toString()).toFixed(1)}克
+                    </p>
                   </td>
-                  <td>{parseFloat(food[27].toString()).toFixed(1)}克</td>
+                  <td>
+                    <p
+                      style={{
+                        background:
+                          parseFloat(food[27].toString()) > 15
+                            ? "var(--errorColor)"
+                            : parseFloat(food[27].toString()) > 5
+                              ? "var(--alternativeSecondaryColor)"
+                              : "var(--primaryColor)",
+                      }}
+                    >
+                      {parseFloat(food[27].toString()).toFixed(1)}克
+                    </p>
+                  </td>
                 </tr>
                 <tr>
                   <td className="topic">鈉</td>
-                  <td
-                    style={{
-                      background:
-                        parseFloat(food[16].toString()) > 600
-                          ? "var(--errorColor)"
-                          : parseFloat(food[16].toString()) > 120
-                            ? "var(--alternativeSecondaryColor)"
-                            : "var(--primaryColor)",
-                    }}
-                  >
-                    {parseFloat(food[16].toString()).toFixed(1)}毫克
+                  <td>
+                    <p
+                      style={{
+                        background:
+                          parseFloat(food[16].toString()) > 600
+                            ? "var(--errorColor)"
+                            : parseFloat(food[16].toString()) > 120
+                              ? "var(--alternativeSecondaryColor)"
+                              : "var(--primaryColor)",
+                      }}
+                    >
+                      {parseFloat(food[16].toString()).toFixed(1)}毫克
+                    </p>
                   </td>
-                  <td>{parseFloat(food[28].toString()).toFixed(1)}毫克</td>
+                  <td>
+                    <p
+                      style={{
+                        background:
+                          parseFloat(food[28].toString()) > 600
+                            ? "var(--errorColor)"
+                            : parseFloat(food[28].toString()) > 120
+                              ? "var(--alternativeSecondaryColor)"
+                              : "var(--primaryColor)",
+                      }}
+                    >
+                      {parseFloat(food[28].toString()).toFixed(1)}毫克
+                    </p>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -165,6 +210,11 @@ const Information: React.FC = () => {
           padding-top: 5px;
           padding-bottom: 5px;
           background: white;
+        }
+
+        table td p {
+          display: inline-block;
+          padding: 0 5px;
         }
 
         table th {
