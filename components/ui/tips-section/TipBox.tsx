@@ -7,23 +7,32 @@ const TipBox: React.FC = () => {
   return (
     <>
       {
-        <div className="tip-box">
-          <img src="/pictures/idea.png" alt="Lightbulb" className="lightbulb-img" />
-          <div className="tip-text">
-            <h1>飲食貼士</h1>
-            <p>
-              {food[31]?.toString() !== "" && food[31].toString().split("請按此")[0]}
-              {food[32]?.toString() !== "" && (
-                <a href={food[32]?.toString()} target="_blank">
-                  請按此{food[31]?.toString().split("請按此")[1]}
-                </a>
-              )}
-            </p>
+        <div className="tip-container">
+          <img src="/pictures/nurse.png" alt="Nurse" className="nurse-img" />
+          <div className="tip-box">
+            <div className="triangle-right"></div>
+            <img src="/pictures/idea.png" alt="Lightbulb" className="lightbulb-img" />
+            <div className="tip-text">
+              <h1>飲食貼士</h1>
+              <p>
+                {food[31]?.toString() !== "" && food[31].toString().split("請按此")[0]}
+                {food[32]?.toString() !== "" && (
+                  <a href={food[32]?.toString()} target="_blank">
+                    請按此{food[31]?.toString().split("請按此")[1]}
+                  </a>
+                )}
+              </p>
+            </div>
           </div>
         </div>
       }
 
       <style jsx>{`
+        .tip-container {
+          display: flex;
+          width: 100%;
+        }
+
         .tip-box {
           margin: 100px 0;
           background: #e21c24;
@@ -35,6 +44,22 @@ const TipBox: React.FC = () => {
           display: grid;
           grid-template-columns: 100px 1fr;
           align-items: center;
+          position: relative;
+        }
+
+        .triangle-right {
+          position: absolute;
+          left: -25px;
+          top: 50px;
+          border-top: 15px solid transparent;
+          border-bottom: 15px solid transparent;
+          border-right: 25px solid #e21c24;
+        }
+
+        .nurse-img {
+          width: 20%;
+          object-fit: contain;
+          margin-right: 20px;
         }
 
         .lightbulb-img {
