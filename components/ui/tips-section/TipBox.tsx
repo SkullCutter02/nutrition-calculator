@@ -13,7 +13,12 @@ const TipBox: React.FC = () => {
             <div className="triangle-right"></div>
             <img src="/pictures/idea.png" alt="Lightbulb" className="lightbulb-img" />
             <div className="tip-text">
-              <h1>飲食貼士</h1>
+              <h1>
+                飲食貼士{" "}
+                <span>
+                  <img src="/pictures/idea.png" alt="Lightbulb" />
+                </span>
+              </h1>
               <p>
                 {food[31]?.toString() !== "" && food[31].toString().split("請按此")[0]}
                 {food[32]?.toString() !== "" && (
@@ -77,6 +82,12 @@ const TipBox: React.FC = () => {
           letter-spacing: 5px;
         }
 
+        .tip-text h1 span img {
+          width: 30px;
+          transform: translateY(6px);
+          display: none;
+        }
+
         .tip-text p {
           color: #fff;
           line-height: 1.5em;
@@ -103,6 +114,34 @@ const TipBox: React.FC = () => {
 
           .tip-text p {
             font-size: 0.9rem;
+          }
+        }
+
+        @media only screen and (max-width: 550px) {
+          .nurse-img {
+            display: none;
+          }
+
+          .lightbulb-img {
+            display: none;
+          }
+
+          .triangle-right {
+            display: none;
+          }
+
+          .tip-box {
+            margin: 100px auto;
+            grid-template-columns: 100%;
+            padding: 40px 10%;
+          }
+
+          .tip-text {
+            width: 100%;
+          }
+
+          .tip-text h1 span img {
+            display: inline;
           }
         }
       `}</style>
