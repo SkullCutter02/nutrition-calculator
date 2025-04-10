@@ -4,8 +4,7 @@ const ReferenceTables: React.FC = () => {
   return (
     <>
       <div className="table-container">
-        <img className="table-1" src="/pictures/table-1.png" alt="" />
-        <img className="table-2" src="/pictures/table-2.png" alt="" />
+        <img className="table" src="/pictures/table.jpeg" alt="" />
       </div>
 
       <style jsx>{`
@@ -17,27 +16,8 @@ const ReferenceTables: React.FC = () => {
           align-items: center;
         }
 
-        .table-1 {
-          width: 70%;
-        }
-
-        .table-2 {
-          width: 70%;
-        }
-
-        @media only screen and (max-width: 600px) {
-          //.table-container {
-          //  flex-direction: column;
-          //  align-items: center;
-          //}
-
-          .table-1 {
-            width: 100%;
-          }
-
-          .table-2 {
-            width: 100%;
-          }
+        .table {
+          width: 100%;
         }
       `}</style>
     </>
