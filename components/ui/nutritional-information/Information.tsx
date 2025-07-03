@@ -19,7 +19,10 @@ const Information: React.FC = () => {
                   <th>每100克</th>
                   <th>
                     每食用份量
-                    <br /> ({food[18].toString()} = {food[19].toString()}克)
+                    <br />{" "}
+                    <span>
+                      ({food[18].toString()} = {food[19].toString()}克)
+                    </span>
                   </th>
                 </tr>
               </thead>
@@ -242,12 +245,32 @@ const Information: React.FC = () => {
         }
 
         @media only screen and (max-width: 600px) {
-          .table-body-container {
-            overflow: scroll;
+          //.table-body-container {
+          //  overflow: scroll;
+          //}
+          //
+          //table {
+          //  width: 600px;
+          //}
+
+          table td.topic {
+            padding-left: 0;
           }
 
-          table {
-            width: 600px;
+          .table-body-container {
+            padding: 15px;
+          }
+
+          table td {
+            font-size: 0.9rem !important;
+          }
+
+          table th {
+            font-size: 0.9rem !important;
+          }
+
+          table tr th span {
+            font-size: 0.7rem !important;
           }
         }
       `}</style>
