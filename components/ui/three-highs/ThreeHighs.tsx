@@ -33,8 +33,8 @@ const ThreeHighs: React.FC = () => {
           >
             <img src="/pictures/fat.png" alt="Fat" />
             <div>
-              <p>總脂肪</p>
-              <p>
+              <p className="header">總脂肪</p>
+              <p className="measurement">
                 {parseFloat(food[11].toString()).toFixed(1)}克 <span>/100克</span>
               </p>
             </div>
@@ -52,8 +52,8 @@ const ThreeHighs: React.FC = () => {
           >
             <img src="/pictures/salt.png" alt="Salt" />
             <div>
-              <p>鈉 (鹽)</p>
-              <p>
+              <p className="header">鈉 (鹽)</p>
+              <p className="measurement">
                 {parseFloat(food[16].toString()).toFixed(1)}毫克 <span>/100克</span>
               </p>
             </div>
@@ -71,8 +71,8 @@ const ThreeHighs: React.FC = () => {
           >
             <img src="/pictures/sugar.png" alt="Sugar" />
             <div>
-              <p>添加糖</p>
-              <p>
+              <p className="header">添加糖</p>
+              <p className="measurement">
                 {parseFloat(food[15].toString()).toFixed(1)}克 <span>/100克</span>
               </p>
             </div>
@@ -193,9 +193,8 @@ const ThreeHighs: React.FC = () => {
 
         @media only screen and (max-width: 650px) {
           .three-highs-container {
-            width: 60%;
-            row-gap: 30px;
-            grid-template-columns: 1fr;
+            width: 95%;
+            row-gap: 20px;
           }
 
           .legend-container {
@@ -203,7 +202,19 @@ const ThreeHighs: React.FC = () => {
           }
 
           .food-picture {
-            width: 50%;
+            width: 30%;
+          }
+
+          header {
+            font-size: 1rem !important;
+          }
+
+          .measurement {
+            font-size: 0.8rem !important;
+          }
+
+          .measurement span {
+            font-size: 0.6rem !important;
           }
         }
       `}</style>
