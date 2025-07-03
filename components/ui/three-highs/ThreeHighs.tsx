@@ -202,19 +202,23 @@ const ThreeHighs: React.FC = () => {
           }
 
           .food-picture {
-            width: 30%;
+            width: 50%;
           }
 
-          header {
-            font-size: 1rem !important;
+          .header {
+            font-size: 0.85rem !important;
           }
 
           .measurement {
-            font-size: 0.8rem !important;
+            font-size: 0.65rem !important;
           }
 
           .measurement span {
-            font-size: 0.6rem !important;
+            font-size: 0.45rem !important;
+          }
+
+          .nutrition-container img {
+            width: 55%;
           }
         }
       `}</style>

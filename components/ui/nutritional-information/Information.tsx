@@ -245,14 +245,6 @@ const Information: React.FC = () => {
         }
 
         @media only screen and (max-width: 600px) {
-          //.table-body-container {
-          //  overflow: scroll;
-          //}
-          //
-          //table {
-          //  width: 600px;
-          //}
-
           table td.topic {
             padding-left: 0;
           }
