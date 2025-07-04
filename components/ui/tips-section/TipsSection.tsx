@@ -10,7 +10,9 @@ const TipsSection: React.FC = () => {
     <>
       <section>
         <Legend />
-        <ReferenceTables />
+      </section>
+      <ReferenceTables />
+      <section>
         <TipBox />
         <Footer />
       </section>
