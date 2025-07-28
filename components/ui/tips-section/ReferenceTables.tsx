@@ -115,7 +115,7 @@ const ReferenceTables: React.FC = () => {
 
         .container {
           width: 50%;
-          margin: 50px auto 0;
+          margin: 0 auto;
         }
 
         .table-header {
