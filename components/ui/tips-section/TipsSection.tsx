@@ -12,6 +12,25 @@ const TipsSection: React.FC = () => {
         <TipBox />
         <Footer />
       </section>
+
+      <style jsx>{`
+        section {
+          width: 50%;
+          margin: 0 auto;
+        }
+
+        @media screen and (max-width: 1000px) {
+          section {
+            width: 70%;
+          }
+        }
+
+        @media screen and (max-width: 600px) {
+          section {
+            width: 90%;
+          }
+        }
+      `}</style>
     </>
   );
 };
